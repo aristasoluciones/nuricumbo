@@ -9,19 +9,11 @@
 
 	$pages = array(
 		'homepage',
-		'contabilidad',
-		'nosotros',
-		'auditoria',
-		'juridico',
-        'nomina',
-        'administracion',
-        'fiscal',
-        'rhumano',
-        'imexico',
-        'contacto',
-		'sistema',
-		'job',
-		'index'
+		'index',
+        'about',
+        'service',
+        'contact',
+        'testimonio'
 
 	);
 

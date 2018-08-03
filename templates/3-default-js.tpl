@@ -10,6 +10,12 @@
 <script src="{$WEB_ROOT}/assets/js/slick.min.js"></script>
 <!-- Select Style -->
 <script src="{$WEB_ROOT}/assets/js/bootstrap-select.min.js"></script>
+{if $page eq 'contact'}
+<script src="{$WEB_ROOT}/assets/js/form-validation.js"></script>
+<!-- Google Maps -->
+<!-- Get your API here https://developers.google.com/maps/documentation/javascript/?hl=es -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRYRss4pNz1bnKJwUrf4wqgnTGzHOTs0o"></script>
+{/if}
 <!-- Flexslider -->
 <script src="{$WEB_ROOT}/assets/js/jquery.flexslider-min.js"></script>
 <!-- Placeholder for IE9 -->

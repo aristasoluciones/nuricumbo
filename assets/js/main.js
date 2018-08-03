@@ -9,6 +9,15 @@ Author URI: http://www.rafamemmel.com
 //===========================================================================================
 //Get IE Version Function
 //===========================================================================================
+var urlLoc = document.location.hostname;
+switch(urlLoc){
+    case 'localhost':
+        var WEB_ROOT = "http://" + urlLoc + "/nuricumbo";
+    break;
+    default:
+        var WEB_ROOT = "http://" + urlLoc + "/";
+    break;
+}
 function getInternetExplorerVersion() {
     var rv = -1;
     var ua = navigator.userAgent;
@@ -521,17 +530,32 @@ $document.on('ready', function() {
     }
     //---------------------------------------------------------------------------------------
     //Contact Form
+    //Send email only if the contact form exist
     //---------------------------------------------------------------------------------------
-    $('#contactform').on('submit', function() {
-        if (!$(this).validate($('#alertform'))) {
-            return false;
-        }
-    });
+    if($('#submitButton').length>0){
+        $('#submitButton').on('click',function(){
+            var form = $(this).parents('form:first');
+            if (!form.validate($('#alertform')))
+                return false;
+            $.ajax({
+                url:WEB_ROOT+'/assets/ajax/contact.php',
+                method:'post',
+                data:form.serialize(true),
+                success:function(response){
+                    $('#alertform').html(response).fadeIn('fast');
+                },
+            });
+
+        });
+
+    }
+
+
     //---------------------------------------------------------------------------------------
     //Google Maps
     //---------------------------------------------------------------------------------------
     if ($('#map-canvas').length) {
-        var myLatLng = {lat: 40.7060555, lng: -74.0090263}; // Wall Street
+        var myLatLng = {lat: 16.724929, lng: -93.104946}; // Wall Street
 
         //Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -542,7 +566,7 @@ $document.on('ready', function() {
         });
 
         //The Window it show after press click in marker icon
-        var contentString = '<div id="mapcontent">'+'<h4 class="m0 color6">Hello!</h4><p>We are here...</p></div>';
+        var contentString = '<div id="mapcontent">'+'<h4 class="m0 color6"></h4><p>Nuricumbo y Asociados</p></div>';
         var infowindow = new google.maps.InfoWindow({
                 maxWidth: 320,
                 content: contentString
@@ -559,7 +583,7 @@ $document.on('ready', function() {
             map: map,
             position: myLatLng,
             icon: image,
-            title: 'Corpboot'
+            title: 'Nuricumbo y Asociados'
         });
 
         google.maps.event.addListener(marker, 'click', function() {

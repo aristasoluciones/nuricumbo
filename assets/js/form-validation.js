@@ -1,7 +1,7 @@
 
 (function($) {
 	$.extend($.fn, {
-		validate: function(alertform) {
+		validate: function(erNes) {
 			var $el = $(this);
 			var $inputs = $el.find('.required');
 			var $first = null;
@@ -12,7 +12,7 @@
 					}
 					else {
 						$(this).closest('div').removeClass('has-error');
-						$(alertform).fadeOut('fast');
+						$(erNes).fadeOut('fast');
 					}
 				});
 
@@ -20,7 +20,7 @@
 					$(this).closest('div').addClass('has-error');
 					if ($first === null) {
 						$first = $(this);
-						$(alertform).html($(this).data('name') + " Field Should Not Be Empty!").fadeIn('fast');
+						$(erNes).html("El campo "+$(this).data('name') + " no debe estar vacio!").fadeIn('fast');
 					}
 				}
 				else if ($(this).hasClass('required-email')) {
@@ -29,7 +29,7 @@
 						$(this).closest('div').addClass('has-error');
 						if ($first === null) {
 							$first = $(this);
-							$(alertform).html($(this).data('name') + " Is Not A Valid Email!").fadeIn('fast');
+							$(erNes).html("Correo electronico "+$(this).data('name') + " no es valido!").fadeIn('fast');
 						}
 					}
 				}
@@ -43,7 +43,7 @@
 				return false;
 			}
 			else {
-				$(alertform).fadeOut('fast');
+				$(erNes).fadeOut('fast');
 				return true;
 			}
 		}

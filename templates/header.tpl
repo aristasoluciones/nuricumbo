@@ -11,14 +11,14 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="{$WEB_ROOT}">Inicio</a></li>
-                <li>
+                <li {if $page eq 'homepage'}class="active"{/if}><a href="{$WEB_ROOT}">Inicio</a></li>
+                <li {if $page eq 'about'}class="active"{/if}>
                     <a href="{$WEB_ROOT}/about">Sobre nosotros</a>
                 </li>
-                <li><a href="services.html">Servicios</a></li>
-                <li><a href="elements.html">Testimonios</a></li>
-                <li>
-                    <a href="#" >Contacto</a>
+                <li {if $page eq 'service'}class="active"{/if}><a href="{$WEB_ROOT}/service">Servicios</a></li>
+                <li {if $page eq 'testimonio'}class="active"{/if}><a href="{$WEB_ROOT}/testimonio">Testimonios</a></li>
+                <li {if $page eq 'contact'}class="active"{/if}>
+                    <a href="{$WEB_ROOT}/contact" >Contacto</a>
                 </li>
             </ul>
         </div>

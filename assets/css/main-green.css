@@ -322,7 +322,17 @@ code, kbd, pre, samp {
   width: 100%;
   z-index: -2;
 }
+h5.listicon-check i {
+  margin-bottom: 4px;
+}
 
+h5.listicon-check i:before {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  display: inline-block;
+  width: 1.5em;
+  color: #019875;
+}
 ul.listicon-check li {
   padding-left: 1em;
   list-style: none;
@@ -337,7 +347,6 @@ ul.listicon-check li:before {
   margin-left: -2.5em;
   color: #019875;
 }
-
 ul.listicon-times li {
   padding-left: 1em;
   list-style: none;
