@@ -22,6 +22,7 @@
                 <address>
                     <p><i class="fa fa-map-marker"></i>Fraccionamiento Lomas del Sauce, Calle Álamo No. 270, Manzana 3 Lote 5, Tuxtla Gutiérrez, Chiapas. C.P. 29000.</p>
                     <p><i class="fa fa-phone"></i>(961) 22 4 52 33</p>
+                    <p><i class="fa fa-mobile-phone"></i> 961 197 9334</p>
                     <p><i class="fa fa-envelope"></i>informes@nuricumboyasociados.com.mx</p>
                     <p><i class="fa fa-skype"></i>nuricumboyasociados</p>
                 </address>
